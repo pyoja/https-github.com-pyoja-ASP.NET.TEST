@@ -9,11 +9,11 @@ namespace WebApplication6.Controllers
     public class BoardController : Controller
     {
         // GET: Board
-        public string List(int? Id)
+        public ActionResult List(int? Id)
         {
             if (Id == null)
-                return "Error Message Board";
-            return "보드리스트: " + Id.Value;
+                return HttpNotFound("에러메시지");
+            return View();
         }
     }
 }
