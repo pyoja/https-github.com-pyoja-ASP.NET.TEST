@@ -1,0 +1,14 @@
+﻿@model IEnumerable<WebApplication6.Models.Book>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<p>Welcome to my website!</p>
+
+@using (Html.BeginForm("AddBook", "Home"))
+{
+    <input type="submit" value="추가" />
+}

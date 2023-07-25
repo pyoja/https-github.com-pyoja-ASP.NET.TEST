@@ -1,6 +1,4 @@
-﻿// HomeController.cs
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,9 +9,15 @@ namespace WebApplication6.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public string Index()
+        public ActionResult Index()
         {
-            return "홈페이지 만들기";
+            return View();
+        }
+
+        public ActionResult AddBook()
+        {
+            // 책 추가 뷰로 리다이렉트
+            return RedirectToAction("AddBook", "Board");
         }
     }
 }

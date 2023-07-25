@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
+using System.Data.Entity;
+using WebApplication6.Models;
 
 namespace WebApplication6
 {
@@ -13,6 +11,9 @@ namespace WebApplication6
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            // 데이터베이스 초기화
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DocumentsDbContext>());
         }
     }
 }
