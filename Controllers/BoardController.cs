@@ -1,8 +1,11 @@
-﻿using System;
+﻿// BoardController.cs
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication6.Models;
 
 namespace WebApplication6.Controllers
 {
@@ -13,7 +16,9 @@ namespace WebApplication6.Controllers
         {
             if (Id == null)
                 return HttpNotFound("에러메시지");
-            return View();
+
+            DocumentsData documentsData = new DocumentsData();
+            return View(documentsData);
         }
     }
 }

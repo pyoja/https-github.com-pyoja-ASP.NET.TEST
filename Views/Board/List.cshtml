@@ -1,4 +1,4 @@
-﻿
+﻿@model WebApplication6.Models.DocumentsData
 @{
     Layout = null;
 }
@@ -11,23 +11,23 @@
     <title>List</title>
 </head>
 <body>
-    <div> 
+    <div>
         <table>
             <thead>
                 <tr>
                     <th>번호</th>
                     <th>제목</th>
                     <th>글쓴이</th>
-                </tr>    
+                </tr>
             </thead>
             <tbody>
-                @for (int i = 0; i < 10; i++)
+                @foreach (var document in Model.DummyDocuments)
                 {
-                <tr>
-                    <td>@(i+1)</td>
-                    <td>제목입니다</td>
-                    <td>홍길동</td>
-                </tr>
+                    <tr>
+                        <td>@document.Document_Number</td>
+                        <td>@document.Title</td>
+                        <td>@document.Writer</td>
+                    </tr>
                 }
             </tbody>
         </table>
